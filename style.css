@@ -1,0 +1,194 @@
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-color: linear-gradient(135deg, #f5f7fa, #e8eef5);
+  --text-color: #2c3e50;
+  --accent-color: #3498db;
+  --card-bg: #ffffff;
+  --header-bg: linear-gradient(135deg, #3498db, #2980b9);
+  --footer-bg: #ecf0f1;
+  --shadow-soft: 0 4px 12px rgba(52, 73, 94, 0.1);
+}
+
+body.dark {
+  --bg-color: linear-gradient(135deg, #1a1f2e, #2c3e50);
+  --text-color: #ecf0f1;
+  --accent-color: #3498db;
+  --card-bg: #34495e;
+  --header-bg: linear-gradient(135deg, #2c3e50, #1a252f);
+  --footer-bg: #2c3e50;
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  text-align: center;
+}
+
+header {
+  background: var(--header-bg);
+  padding: 2rem 1rem;
+  box-shadow: var(--shadow-soft);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  transition: background 0.2s ease;
+}
+
+nav a:hover {
+  background: rgba(75, 108, 255, 0.1);
+}
+
+/* Layout */
+.content,
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.container .card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+
+.container .card:hover {
+  transform: translateY(-2px);
+}
+
+.container .card+.card {
+  border-top: 1px solid rgba(34, 34, 34, 0.1);
+  margin-top: -1px;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  color: #555;
+}
+
+/* Posts */
+.posts-section {
+  margin-bottom: 2.5rem;
+}
+
+.posts-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  margin-bottom: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  text-align: justify;
+}
+
+.card li {
+  margin-top: 0.5rem;
+  text-align: left;
+
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: inline-block;
+  object-fit: cover;
+}
+
+.card li:last-of-type {
+  margin-bottom: 1rem;
+}
+
+.card p:last-of-type {
+  text-align: center;
+  font-style: italic;
+}
+
+.post h3 {
+  margin-bottom: 0.4rem;
+}
+
+.post-meta {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 0.6rem;
+}
+
+/* About section */
+.about-section {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  padding: 1.5rem;
+}
+
+.about-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--footer-bg);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .post {
+    flex-direction: row;
+  }
+
+  .post img {
+    width: 40%;
+    object-fit: cover;
+  }
+
+  .post-content {
+    width: 60%;
+  }
+}
